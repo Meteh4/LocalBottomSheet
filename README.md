@@ -32,40 +32,61 @@ class MyBottomSheetScreen : BottomSheet<MyViewModel>(
     }
 }
 ```
-💡 Example Use Case
-Use LocalBottomSheet to:
+## 💡 Example Use Case
 
-Display dynamic content in a bottom sheet.
+`LocalBottomSheet` can be used to:
 
-Automatically manage ViewModel lifecycle and scope for each sheet.
+- ✅ Display **dynamic content** in a bottom sheet  
+- 🔄 Automatically manage **ViewModel lifecycle and scope** for each sheet  
+- ♻️ Create **reusable, scoped components** using Koin DI  
 
-Create reusable, scoped components using Koin DI.
+This is especially useful in **multi-screen Jetpack Compose apps** that require modular bottom sheet interactions.
 
-This is especially useful in multi-screen Compose apps that require modular bottom sheet interactions.
+---
 
-🧰 Installation
-1. Add Dependencies
-Add Koin and Compose dependencies in your build.gradle (or build.gradle.kts):
+## 🧰 Installation
 
-Koin
+### 1. Add Dependencies
+
+#### Koin
+```kotlin
 implementation("io.insert-koin:koin-android:3.x.x")
 implementation("io.insert-koin:koin-androidx-compose:3.x.x")
+```
 
-Jetpack Compose
+#### Jetpack Compose
+```kotlin
 implementation("androidx.compose.material:material:<version>")
-🔁 Replace 3.x.x and <version> with the latest versions.
+```
 
-2. Configure Koin
-Make sure to configure Koin scopes in your Application class or DI module.
+> 🔁 Replace `3.x.x` and `<version>` with the latest versions.
 
-🤝 Contributions
-Contributions are welcome!
+---
+
+### 2. Configure Koin
+
+Make sure to configure **Koin scopes** in your `Application` class or DI module:
+
+```kotlin
+startKoin {
+    androidContext(this@YourApplication)
+    modules(yourModuleList)
+}
+```
+
+---
+
+## 🤝 Contributions
+
+**Contributions are welcome!**  
 Feel free to:
 
-Open issues
+- 🐞 Open issues  
+- 📬 Submit pull requests (PRs)  
+- 💡 Suggest improvements  
 
-Submit pull requests (PRs)
+Let's build **better bottom sheets** together 🚀
 
-Suggest improvements
+---
+![Screenshot](/screenshots/screenshot.gif)
 
-Let's build better bottom sheets together 🚀
